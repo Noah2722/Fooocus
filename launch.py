@@ -53,7 +53,7 @@ def prepare_environment():
             elif platform.system() == "Linux":
                 run_pip(f"install -U -I --no-deps {xformers_package}", "xformers")
 
-    if REINSTALL_ALL or not requirements_met(requirements_file):
+    if REINSTALL_ALL:
         run_pip(f"install -r \"{requirements_file}\"", "requirements")
 
     return
